@@ -4,5 +4,5 @@ A minimalist and sober grayscale theme for Omarchy.
 
 ## Screenshots
 
-![screenshot 1](https://github.com/YutaKoyanagi10/omarchy-koyanagi-theme/blob/main/screenshots/screenshot-2025-12-25_17-18-31.png)
-![screenshot 2](https://github.com/YutaKoyanagi10/omarchy-koyanagi-theme/blob/main/screenshots/screenshot-2025-12-25_17-20-57.png)
+![screenshot 1](screenshots/screenshot-2026-08-16_23-36-31.png)
+![screenshot 2](screenshots/screenshot-2026-08-16_23-45-56.png)
