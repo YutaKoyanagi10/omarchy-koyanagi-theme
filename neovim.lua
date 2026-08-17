@@ -30,7 +30,7 @@ local M = {
 					vim.api.nvim_set_hl(0, group, opts)
 				end
 
-				-- All highlight groups below use the new Matte Candy colors
+				-- All highlight groups below use the Koyanagi palette
 				set_hl("Normal", { fg = colors.fg, bg = colors.bg })
 				set_hl("Comment", { fg = colors.muted, italic = true })
 				set_hl("Constant", { fg = colors.gold })
@@ -148,7 +148,7 @@ local M = {
 				set_hl("@tag", { link = "Tag" })
 				set_hl("@tag.attribute", { fg = colors.secondary })
 				set_hl("@tag.delimiter", { fg = colors.muted })
-				set_hl("@constructor", { fg = colors.purple })
+				set_hl("@constructor", { fg = colors.info })
 				set_hl("@namespace", { fg = colors.info })
 				set_hl("@include", { link = "Include" })
 				set_hl("@conditional", { link = "Conditional" })
