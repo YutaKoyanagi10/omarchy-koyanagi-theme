@@ -1,5 +1,5 @@
-local active_border_color = { colors = { "rgb(C0C0C0)", "rgb(D3D3D3)", "rgb(E5E5E5)", "rgb(B0B0B0)" }, angle = 45 }
-local inactive_border_color = "rgba(404040ff)"
+local active_border_color = { colors = { "rgb(D8D8D8)", "rgb(F0F0F0)", "rgb(FFFFFF)", "rgb(C8C8C8)" }, angle = 45 }
+local inactive_border_color = "rgba(808080aa)"
 
 hl.config({
   general = {
@@ -23,28 +23,27 @@ hl.config({
 
     shadow = {
       enabled = true,
-      range = 20,
-      render_power = 10,
-      color = "rgba(a7a7a7cc)",
-      color_inactive = "rgba(00000066)",
-      offset = "0 0",
+      range = 30,
+      render_power = 4,
+      color = "rgba(00000055)",
+      color_inactive = "rgba(00000033)",
+      offset = "0 4",
     },
 
     blur = {
       enabled = true,
-      size = 6,
-      passes = 3,
-      contrast = 1.5,
-      brightness = 0.8,
-      vibrancy = 0.2,
-      vibrancy_darkness = 0.2,
-      noise = 0.07,
+      size = 12,
+      passes = 4,
+      contrast = 1.2,
+      brightness = 0.9,
+      vibrancy = 0.4,
+      vibrancy_darkness = 0.3,
+      noise = 0.12,
       ignore_opacity = true,
-      new_optimizations = true,
     },
 
-    active_opacity = 0.98,
-    inactive_opacity = 0.9,
+    active_opacity = 0.75,
+    inactive_opacity = 0.65,
     fullscreen_opacity = 1.0,
   },
 
@@ -55,3 +54,19 @@ hl.config({
     },
   },
 })
+
+-- Blur on all shell surfaces
+local shell_layers = {
+  "omarchy-bar", "omarchy-menu", "omarchy-notifications",
+  "omarchy-clipboard", "omarchy-emojis", "omarchy-osd",
+  "omarchy-polkit", "omarchy-image-selector", "omarchy-reminders",
+  "omarchy-network-qr", "omarchy-keyboard-panel",
+}
+
+local blur_rules = {}
+for _, ns in ipairs(shell_layers) do
+  table.insert(blur_rules, { rule = "blur", match = { namespace = ns } })
+  table.insert(blur_rules, { rule = "ignorezero", match = { namespace = ns } })
+end
+
+hl.config({ layerrule = blur_rules })

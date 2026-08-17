@@ -5,24 +5,28 @@ local M = {
 			colorscheme = function()
 				vim.cmd("set termguicolors")
 
-				   local colors = {
-					   bg = "#1C1C1E",         -- palette 0
-					   fg = "#F2F2F2",         -- palette 1, 6, 7
-					   gold = "#FFDD80",        -- palette 2
-					   primary = "#8A8A8A",     -- palette 5
-					   secondary = "#6A6A6A",   -- palette 3
-					   tertiary = "#7A7A7A",    -- palette 4
-					   accent = "#FFDD80",      -- palette 2
-					   muted = "#6A6A6A",       -- palette 3
-					   dark = "#1C1C1E",        -- palette 0
-					   border = "#7A7A7A",      -- palette 4
-					   selection = "#7A7A7A",   
-					   success = "#80e680",
-					   danger = "#e65c5c",
-					   warning = "#FFDD80",
-					   info = "#8A8A8A",
-					   subtle = "#6A6A6A"
-				   }
+			   local colors = {
+				   bg = "#1C1C1E",
+				   fg = "#F2F2F2",
+				   gold = "#FFDD80",
+				   primary = "#8A8A8A",
+				   secondary = "#6A6A6A",
+				   tertiary = "#7A7A7A",
+				   accent = "#FFDD80",
+				   muted = "#6A6A6A",
+				   dark = "#1C1C1E",
+				   border = "#7A7A7A",
+				   selection = "#7A7A7A",
+				   success = "#80e680",
+				   danger = "#e65c5c",
+				   warning = "#FFDD80",
+				   info = "#8A8A8A",
+				   subtle = "#6A6A6A",
+				   diff_add = "#1e2e28",
+				   diff_change = "#2a2435",
+				   diff_delete = "#2e1e24",
+				   diff_text = "#3a3520",
+			   }
 
 				vim.cmd("highlight clear")
 
@@ -100,10 +104,10 @@ local M = {
 				set_hl("MoreMsg", { fg = colors.success })
 				set_hl("ModeMsg", { fg = colors.primary, bold = true })
 				set_hl("Question", { fg = colors.info })
-				set_hl("DiffAdd", { bg = "#223e36" })
-				set_hl("DiffChange", { bg = "#3c2f47" })
-				set_hl("DiffDelete", { bg = "#472f36" })
-				set_hl("DiffText", { bg = "#47442f", bold = true })
+				set_hl("DiffAdd", { bg = colors.diff_add })
+				set_hl("DiffChange", { bg = colors.diff_change })
+				set_hl("DiffDelete", { bg = colors.diff_delete })
+				set_hl("DiffText", { bg = colors.diff_text, bold = true })
 
 				set_hl("SpellBad", { undercurl = true, sp = colors.danger })
 				set_hl("SpellCap", { undercurl = true, sp = colors.warning })
@@ -140,8 +144,8 @@ local M = {
 				set_hl("@storageclass", { link = "StorageClass" })
 				set_hl("@variable", { fg = colors.fg })
 				set_hl("@variable.builtin", { fg = colors.danger, bold = true, italic = true })
-				set_hl("@property", { link = "info" })
-				set_hl("@field", { link = "info" })
+				set_hl("@property", { fg = colors.info })
+				set_hl("@field", { fg = colors.info })
 				set_hl("@parameter", { fg = colors.warning, italic = true })
 				set_hl("@punctuation.bracket", { link = "Delimiter" })
 				set_hl("@punctuation.delimiter", { link = "Delimiter" })
